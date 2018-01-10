@@ -59,6 +59,7 @@ class App extends Component {
     // };
 
     let persons = null;
+    let btnClass = '';
 
     if (this.state.showPersons) {
       // style.backgroundColor = 'red';
@@ -66,6 +67,7 @@ class App extends Component {
       //   backgroundColor: 'salmon',
       //   color: 'black'
       // }
+      btnClass = classes.red;
       persons = 
         <div>
           {this.state.persons.map((person, index) => {
@@ -98,6 +100,7 @@ class App extends Component {
           <p className={assignedClasses.join(' ')}>This is really working!</p>
           <button 
               /* style={style} */
+              className={btnClass}
               onClick={this.togglePersonsHandler}
           >Toggle Persons</button>
           {persons}
